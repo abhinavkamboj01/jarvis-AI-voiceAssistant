@@ -11,7 +11,7 @@ cursor = conn.cursor() # create a cursor object
 # query = "CREATE TABLE IF NOT EXISTS web_command(id integer primary key, name VARCHAR(100), url VARCHAR(1000))"
 # cursor.execute(query)
 
-# query = "INSERT INTO sys_command VALUES (null,'Prime Video', '/Applications/Prime Video.app')"  # kyuki ye ek bar chal chuka h bar bar chlane pe error dega
+# query = "INSERT INTO sys_command VALUES (null,'Prime Video', '/Applications/Prime Video.app')"  
 # cursor.execute(query)
 # conn.commit()
 
@@ -42,14 +42,9 @@ cursor = conn.cursor() # create a cursor object
 # conn.close()  
 
 
-# for adding single contact in database
-query = "INSERT INTO contacts VALUES ( null,'Abhinav Home', '9991424072', 'null')"
-cursor.execute(query)
-conn.commit()   
-
 # for fetching a single contact from database
 
-# query = "Anubhav"
+# query = "Name"
 # query = query.strip().lower()
 
 # cursor.execute("SELECT phone FROM contacts WHERE LOWER(name) LIKE ?", ('%' + query + '%',))
