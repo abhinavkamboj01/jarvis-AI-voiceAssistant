@@ -47,7 +47,7 @@ def openCommand(query):
     query = query.replace(ASSISTANT_NAME, "").strip()  # Remove assistant name
     query = query.lower()
     query = query.replace("open", "").strip()  # Remove "open" and clean query
-    # Debugging line to inspect the query
+    
     if query != "":
         try:
             # 1️⃣ Check if it's a system application
@@ -151,71 +151,6 @@ def whatsApp(phone, message, flag, name):
 
     speak(jarvis_message)
 
-
-
-
-
-# import subprocess
-# import time
-# import pyautogui
-# from urllib.parse import quote
-
-# def speak(message):
-#     # Placeholder for the speak function
-#     print(f"Jarvis says: {message}")
-
-# def click_image(target_image, confidence=0.8):
-#     location = pyautogui.locateOnScreen(target_image, confidence=confidence)
-#     if location:
-#         pyautogui.moveTo(location)
-#         pyautogui.click()
-#         return True
-#     return False
-
-# def whatsApp(phone, message, flag, name):
-#     if flag == "message":
-#         # Encode the message for URL
-#         encoded_message = quote(message)
-#         # Construct the URL
-#         whatsapp_url = f"whatsapp://send?phone={phone}&text={encoded_message}"
-#         jarvis_message = f"Message sent successfully to {name}."
-#     else:
-#         # Open WhatsApp without a message
-#         whatsapp_url = f"whatsapp://send?phone={phone}"
-#         jarvis_message = f"Initiating {'video call' if flag == 'video_call' else 'voice call'} with {name}."
-
-#     # Construct the full command
-#     full_command = f'open -a "WhatsApp" "{whatsapp_url}"'
-
-#     try:
-#         # Open WhatsApp with the constructed URL
-#         subprocess.run(full_command, shell=True, check=True)
-#         time.sleep(5)
-
-#         # Automate interaction based on flag
-#         pyautogui.hotkey("cmd", "f")  # Focus on search
-#         time.sleep(1)
-#         pyautogui.write(name)  # Search for the contact
-#         time.sleep(3)
-#         pyautogui.press("enter")  # Open chat
-#         time.sleep(3)
-
-#         # Click call or video call button
-#         if flag == "call":
-#             if not click_image("voice_call_button.png"):
-#                 speak(f"Could not find the voice call button for {name}.")
-#                 return
-#         elif flag == "video_call":
-#             if not click_image("video_call_button.png"):
-#                 speak(f"Could not find the video call button for {name}.")
-#                 return
-
-#         time.sleep(2)
-#         speak(jarvis_message)
-
-#     except subprocess.CalledProcessError as e:
-#         print(f"Error occurred: {e}")
-#         speak(f"Failed to perform {flag} operation with {name}.")
 
 def chatBot(query):
     user_input = query.lower()
