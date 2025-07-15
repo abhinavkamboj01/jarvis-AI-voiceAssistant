@@ -56,7 +56,7 @@ def AuthenticateFace():
             # used to draw a rectangle on any image
             cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
 
-            threshold = 70
+            threshold = 50
             # to predict on every single image
             id, accuracy = recognizer.predict(converted_image[y:y+h, x:x+w])
 
