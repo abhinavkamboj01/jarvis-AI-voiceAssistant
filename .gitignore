@@ -1,0 +1,6 @@
+# it will not let the  code or part that we dont want to upload to github
+
+/envjarvis
+contact.csv
+jarvis.db
+/backend/cookie.json
